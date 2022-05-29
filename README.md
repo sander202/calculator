@@ -1,1 +1,1 @@
-# calculator
+This is a project to build a an on-screen calculator that can do some basic operations
