@@ -29,9 +29,12 @@
     </div>
     <div class="row4">
         <button onclick="display('0')">0</button>
-        <button onclick="clearScreen()">C</button>
-        <button onclick="operate(chosenOperator, storedNumber, output)">=</button>
+        <button onclick="clearAll()">C</button>
+        <button onclick="operate(chosenOperator[index - 1], storedNumber, displayedNumber)">=</button>
         <button onclick="selectOperator('+')">+</button>
+    </div>
+    <div class="row5">
+        <button onclick="decimal('.')">.</button>
     </div>
     <script>
            
