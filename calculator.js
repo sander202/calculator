@@ -35,7 +35,7 @@ const divide = (num1, num2) => {
 const operate = (operator, num1, num2) => {
     const screen = document.querySelector('.display');
     if (!num1 || !num2) {
-        screen.textContent = displayedNumber || storedNumber;
+        screen.textContent = displayedNumber || storedNumber || "0";
     } else {
         if (operator === "+") {
             result = add(num1, num2);   
@@ -62,11 +62,26 @@ const clearAll = () => {
     displayedNumber = "";
     chosenOperator = [];
     index = 0;
+    result = "";
+}
+
+const undo = () => {
+    if (displayedNumber !== "") {
+        const screen = document.querySelector('.display');
+        let index = displayedNumber.length;
+        displayedNumber = displayedNumber.slice(0, index - 1);
+        if (displayedNumber !== ""){
+            screen.textContent = displayedNumber;
+        } else {
+            screen.textContent = "0";
+        }        
+    }
 }
 
 const decimal = (point) => {
     const screen = document.querySelector('.display');
-    if (!screen.textContent.includes(point)) {
+    console.log(result);
+    if (!screen.textContent.includes(point) && screen.textContent !== JSON.stringify(result)) {
         if (screen.textContent === "0") {
             displayedNumber = "0";
         }
