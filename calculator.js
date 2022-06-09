@@ -106,10 +106,12 @@ const selectOperator = (operator) => {
 
 const display = (digit) => {
     const screen = document.querySelector('.display');
-    if (screen.textContent === "0") {
-        displayedNumber = digit;
-    } else {
-        displayedNumber += digit;      
+    if (displayedNumber.length <= 8) {
+        if (screen.textContent === "0") {
+            displayedNumber = digit;
+        } else {
+            displayedNumber += digit;      
+        }
+        screen.textContent = displayedNumber;  
     }
-    screen.textContent = displayedNumber;  
 }
